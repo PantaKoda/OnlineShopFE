@@ -1,79 +1,95 @@
+body {
+    background-image: url('pexels-photo-1022692.jpeg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image in the viewport */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-form-main {
     width: 300px; /* Adjust as needed */
     margin: auto;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-height  : 550px;
+    min-height: 550px;
     margin-bottom: 90px;
     padding: 60px 68px 40px;
     border-radius: 4px;
     background-color: black;
     opacity: 0.75;
     position: relative;
-    top: 220px;
-   
-
+    top: 60px;
 }
 
-.input_id {
+.input-container {
     position: relative;
     margin-bottom: 20px;
-    box-sizing:border-box;
-    display:flex;
-    flex-direction:column;
-    widows: 100%;
-    padding-bottom: 10px;
 }
 
-.input_id input {
-    width: 80%;
+.input-container input {
+    width: 100%; /* Changed from 80% to 100% */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  background: #333;
+    background: #333;
+    color: white;
 }
 
-.input_id label {
+.input-container label {
     position: absolute;
     left: 10px;
     top: 10px;
-    color: #aaa;
-    transition: top 0.3s, left 0.3s, font-size 0.3s;
-    transform: translateY(-70%);
-    top: 50%;
-   color: #8c8c8c;
+    color: #8c8c8c;
+    transition: 0.3s ease all;
     pointer-events: none;
-  
 }
 
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #ccc;
+}
 
 .btn {
-width: 90%; /* Match the width of the input fields */
-padding: 10px; /* Adjust padding as needed */
-background: #e50914;
-border-radius: 4px;
-font-size: 16px;
-font-weight: 500;
-margin: 24px 0 12px;
-border: none; /* Remove default border */
-color: white; /* Text color */
-cursor: pointer; /* Change cursor to pointer on hover */
+    width: 100%; /* Match the width of the input fields */
+    padding: 10px; /* Adjust padding as needed */
+    background: #e50914;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 24px 0 12px;
+    border: none; /* Remove default border */
+    color: white; /* Text color */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
-
 
 .InputError {
-display: none;
-color: #e87c03;
-font-size: 13px;
-margin-top: 5px;
-padding: 6px 3px;
-
+    display: none;
+    color: #e87c03;
+    font-size: 13px;
+    margin-top: 5px;
+    padding: 6px 3px;
 }
 
-h1{
-color: #fff;
-font-size: 32px;
-font-weight: 500;
-margin-bottom: 28px;
+h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
 
+.login-signup-now {
+    color: #8c8c8c;
+}
+
+a {
+    cursor: pointer;
+    color: #fff;
 }
