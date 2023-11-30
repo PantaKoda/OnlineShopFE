@@ -2,50 +2,98 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Signup</title>
 
     <link href="style.css" rel="stylesheet" />
-    <script src="script.js"></script>
   </head>
 
   <body>
-    <div class="login-body">
-      <div class="login-form-main">
-        <h1>Sign In</h1>
-        <form action="post" class="login-form">
-          <div class="EmailInput input-container">
-            <input
-              type="text"
-              name="userLoginId"
-              id="id_userLoginId"
-              tabindex="0"
-              autocomplete="email"
-              aria-errormessage="error_message_userLoginId"
-            />
-            <label for="id_userLoginId" class="placeLabel">Email</label>
-            <div class="InputError" id="error_message_userLoginId">
-              Please enter a valid email address.
-            </div>
+    <header>
+      <h2 class="logo">Logo</h2>
+      <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <button class="btnLogin-popup">Login</button>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+        <span class="icon-close"> <ion-icon name="close"></ion-icon></span>
+
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form action="#" id="loginForm">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon> </span>
+            <input type="email" required />
+            <label>Email</label>
           </div>
-          <div class="PasswordInput input-container">
-            <input
-              type="password"
-              name="password"
-              id="id_password"
-              tabindex="0"
-              autocomplete="password"
-            />
-            <label for="id_password" class="placeLabel">Password</label>
-            <div class="InputError" id="error_message_password">
-              Your password must contain between 4 and 60 characters.
-            </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></ion-icon></span>
+            <input type="password" required />
+            <label>Password</label>
           </div>
-          <button class="btn login-button" type="submit">Sign In</button>
+          <div class="remember-forget">
+            <label><input type="checkbox">Remember me.</label>
+            <a href="#">Forgot Password</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="login-register">
+            <p>New customer
+                <a href="#" class="register-link">Register</a>
+            </p>
+          </div>
         </form>
-        <div class="login-signup-now">
-          Are you a new customer? <a href="signup.html">Sign up now.</a>
-        </div>
       </div>
+
+
+      <div class="form-box register">
+        <h2>Registration</h2>
+        <form action="post" id="registrationForm">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon> </span>
+                <input type="text" id="username" required />
+                <label>Username</label>
+              </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon> </span>
+            <input type="email" id="email" required />
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></ion-icon></span>
+            <input type="password" id="password" required />
+            <label>Password</label>
+          </div>
+          <div class="remember-forget">
+            <label><input type="checkbox">I agree to the terms & conditions.</label>
+          
+          </div>
+          <button type="submit" class="btn">Register</button>
+          <div class="login-register">
+            <p>Already have an account
+                <a href="#" class="login-link">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+
     </div>
+
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  
   </body>
 </html>

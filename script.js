@@ -1,42 +1,54 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const emailInput = document.getElementById("id_userLoginId");
-  const passwordInput = document.getElementById("id_password");
-  const emailError = document.getElementById("error_message_userLoginId");
-  const passwordError = document.getElementById("error_message_password");
+const wrapper = document.querySelector(".wrapper");
+const loginLink = document.querySelector(".login-link");
+const registerLink = document.querySelector(".register-link");
+const btnPopup = document.querySelector(".btnLogin-popup");
+const iconClose = document.querySelector(".icon-close");
 
-  emailInput.addEventListener("focus", function () {
-    emailError.style.display = "block";
-  });
-  emailInput.addEventListener("blur", function () {
-    emailError.style.display = "none";
-  });
-
-  passwordInput.addEventListener("focus", function () {
-    passwordError.style.display = "block";
-  });
-  passwordInput.addEventListener("blur", function () {
-    passwordError.style.display = "none";
-  });
+registerLink.addEventListener("click", () => {
+  wrapper.classList.add("active");
 });
 
-//Sign In
+loginLink.addEventListener("click", () => {
+  wrapper.classList.remove("active");
+});
 
-document
-  .getElementById("login-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+btnPopup.addEventListener("click", () => {
+  wrapper.classList.add("active-popup");
+});
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+iconClose.addEventListener("click", () => {
+  wrapper.classList.remove("active-popup");
+});
 
-    fetch("http://localhost:8000/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // Logging the captured data
+  console.log("Captured Data:", { username, email, password });
+
+  fetch("http://localhost:8080/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, email, password }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
     })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Error:", error));
-  });
+    .then((data) => {
+      console.log("Success:", data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
