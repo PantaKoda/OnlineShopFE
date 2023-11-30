@@ -1,0 +1,79 @@
+.login-form-main {
+    width: 300px; /* Adjust as needed */
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height  : 550px;
+    margin-bottom: 90px;
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    background-color: black;
+    opacity: 0.75;
+    position: relative;
+    top: 220px;
+   
+
+}
+
+.input_id {
+    position: relative;
+    margin-bottom: 20px;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    widows: 100%;
+    padding-bottom: 10px;
+}
+
+.input_id input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  background: #333;
+}
+
+.input_id label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #aaa;
+    transition: top 0.3s, left 0.3s, font-size 0.3s;
+    transform: translateY(-70%);
+    top: 50%;
+   color: #8c8c8c;
+    pointer-events: none;
+  
+}
+
+
+.btn {
+width: 90%; /* Match the width of the input fields */
+padding: 10px; /* Adjust padding as needed */
+background: #e50914;
+border-radius: 4px;
+font-size: 16px;
+font-weight: 500;
+margin: 24px 0 12px;
+border: none; /* Remove default border */
+color: white; /* Text color */
+cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+.InputError {
+display: none;
+color: #e87c03;
+font-size: 13px;
+margin-top: 5px;
+padding: 6px 3px;
+
+}
+
+h1{
+color: #fff;
+font-size: 32px;
+font-weight: 500;
+margin-bottom: 28px;
+
+}

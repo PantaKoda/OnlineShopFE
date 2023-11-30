@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signup</title>
+
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="login-body">
+      <div class="login-form-main">
+        <h1>Sign In</h1>
+        <form action="post" class="login-form">
+          <div class="EmailInput">
+            <label class="input_id">
+              <input
+                type="text"
+                name="userLoginId"
+                id="id_userLoginId"
+                tabindex="0"
+                autocomplete="email"
+                aria-errormessage="error_message_userLoginId"
+              />
+              <label for="id_userLoginId" class="placeLabel">Email</label>
+            </label>
+            <div class="InputError" id="error_message_userLoginId">
+              Please enter a valid email address.
+            </div>
+          </div>
+          <div class="PasswordInput">
+            <label class="input_id">
+              <input
+                type="password"
+                name="password"
+                id="id_password"
+                tabindex="0"
+                autocomplete="password"
+              />
+              <label for="id_password" class="placeLabel">Password</label>
+            </label>
+            <div class="InputError" id="error_message_password">
+              Your password must contain between 4 and 60 characters.
+            </div>
+          </div>
+          <button class="btn login-button" type="submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
